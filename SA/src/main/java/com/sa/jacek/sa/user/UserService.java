@@ -1,5 +1,7 @@
 package com.sa.jacek.sa.user;
 
+import com.sa.jacek.sa.exception.IdMismatchException;
+import com.sa.jacek.sa.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -34,12 +36,12 @@ public class UserService {
 
     public UserDto updateUser(Long id, UserDto dto) {
         Assert.notNull(dto.getId(), "Id cannot be empty");
-//        if (!dto.getId().equals(id)) {
-//            throw new IdMismatchException("Id's mismatch");
-//        }
-//        if (!userRepository.existsById(id)) {
-//            throw new ResourceNotFoundException("Movie doesn't exist");
-//        }
+        if (!dto.getId().equals(id)) {
+            throw new IdMismatchException("Id's mismatch");   // porónuje id ze ścieżki z adresu z id w body. Jeśli adresy są tożsame to aktualizacja się wykona.
+        }
+        if (!userRepository.existsById(id)) {
+            throw new ResourceNotFoundException("User doesn't exist"); // czy użytkownik do update o podanym id istnieje. bez tego wyjątku zakłada nowego id zamiast aktualizować
+        }
         User entity = userMapper.mapToEntity(dto);
         userRepository.save(entity);
         return userMapper.mapToDto(entity);
