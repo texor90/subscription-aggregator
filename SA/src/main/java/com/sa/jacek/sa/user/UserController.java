@@ -51,4 +51,10 @@ public class UserController {
         return ResponseEntity.noContent().build();
 
     }
+    @DeleteMapping()
+    public ResponseEntity deleteUsers() {
+        userService.deleteAll();
+        return ResponseEntity.noContent().build();
+
+    }
 }

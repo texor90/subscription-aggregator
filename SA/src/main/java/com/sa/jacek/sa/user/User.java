@@ -23,8 +23,5 @@ public class User {
     private String password;
     private LocalDate dateOfBirth;
 
-
-
-
 }
 
