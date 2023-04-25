@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -22,7 +23,7 @@ public class Order {
     private User user;
     @ManyToOne
     private Product product;
-    private LocalDate purchaseDate;
+    private LocalDateTime purchaseDate;
 
 
 }

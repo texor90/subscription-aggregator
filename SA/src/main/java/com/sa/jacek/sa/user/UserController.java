@@ -1,5 +1,10 @@
 package com.sa.jacek.sa.user;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -14,6 +19,9 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
+
+    // http://localhost:8080/swagger-ui/index.html#/  - wywołanie swaggera w przeglądarce
 
     @GetMapping
     public ResponseEntity<List<UserDto>> getUsers() {
@@ -30,6 +38,7 @@ public class UserController {
         UserDto UserDto = userService.addUser(User);
         return ResponseEntity.ok(UserDto);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUser (@PathVariable Long id) {

@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Objects;
 
 
 @RestController
@@ -50,4 +51,21 @@ public class OrderController {
         return ResponseEntity.noContent().build();
 
     }
+
+    // dodatkowe endpointy - wywołanie
+    // czy ktokolwiek zakupił dany produkt - wywołanie
+    @GetMapping("/anyoneproduct/{productId}")
+    public ResponseEntity<Boolean> anyoneBoughtProduct (@PathVariable Long productId) {
+        boolean bought = orderService.anyoneBoughtProduct(productId);
+        return ResponseEntity.ok(bought);
+    }
+
+    // dodatkowe endpointy - wywołanie
+    // czy dany użytkownik zakupil konkretny produkt
+    @GetMapping("/userproduct/{userId}/{productId}")
+    public ResponseEntity<Boolean> userBoughtProduct (@PathVariable Long userId, @PathVariable Long productId) {
+        boolean bought = orderService.userBoughtProduct(userId, productId);
+        return ResponseEntity.ok(bought);
+    }
+
 }
