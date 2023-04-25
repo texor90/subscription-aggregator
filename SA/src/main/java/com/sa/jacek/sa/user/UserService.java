@@ -27,4 +27,25 @@ public class UserService {
         return userMapper.mapToDto(User);
     }
 
+
+        public UserDto getById(Long id) {
+            return userMapper.mapToDto(userRepository.findById(id).orElse(null));
+        }
+
+    public UserDto updateUser(Long id, UserDto dto) {
+        Assert.notNull(dto.getId(), "Id cannot be empty");
+//        if (!dto.getId().equals(id)) {
+//            throw new IdMismatchException("Id's mismatch");
+//        }
+//        if (!userRepository.existsById(id)) {
+//            throw new ResourceNotFoundException("Movie doesn't exist");
+//        }
+        User entity = userMapper.mapToEntity(dto);
+        userRepository.save(entity);
+        return userMapper.mapToDto(entity);
+    }
+
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
+    }
 }
