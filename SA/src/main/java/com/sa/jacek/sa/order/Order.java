@@ -22,7 +22,6 @@ public class Order {
     private User user;
     @ManyToOne
     private Product product;
-    private double price;
     private LocalDate purchaseDate;
 
 

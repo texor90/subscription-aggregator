@@ -18,6 +18,7 @@ public class Product {
     @ManyToOne
     private Category category;
     private int durationDays;
+    private double price;
 
 }
 
