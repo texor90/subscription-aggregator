@@ -1,9 +1,6 @@
 package com.sa.jacek.sa.product;
 
-import com.sa.jacek.sa.user.User;
-import com.sa.jacek.sa.user.UserDto;
 import org.mapstruct.Mapper;
-
 import java.util.List;
 
 @Mapper(componentModel = "spring")

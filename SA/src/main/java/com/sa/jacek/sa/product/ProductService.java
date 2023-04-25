@@ -2,10 +2,6 @@ package com.sa.jacek.sa.product;
 
 import com.sa.jacek.sa.exception.IdMismatchException;
 import com.sa.jacek.sa.exception.ResourceNotFoundException;
-import com.sa.jacek.sa.product.Product;
-import com.sa.jacek.sa.product.ProductDto;
-import com.sa.jacek.sa.product.ProductMapper;
-import com.sa.jacek.sa.product.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 

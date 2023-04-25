@@ -1,10 +1,7 @@
 package com.sa.jacek.sa.product;
 
-import com.sa.jacek.sa.user.UserDto;
-import com.sa.jacek.sa.user.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
