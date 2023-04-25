@@ -1,5 +1,6 @@
 package com.sa.jacek.sa.order;
 
+import com.sa.jacek.sa.product.Product;
 import com.sa.jacek.sa.user.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,8 @@ public class Order {
 
     @ManyToOne
     private User user;
-    private Long product_id;
+    @ManyToOne
+    private Product product;
     private double price;
     private LocalDate purchaseDate;
 

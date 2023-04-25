@@ -1,5 +1,6 @@
 package com.sa.jacek.sa.product;
 
+import com.sa.jacek.sa.category.Category;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -14,7 +15,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String category;
+    @ManyToOne
+    private Category category;
     private int durationDays;
 
 }

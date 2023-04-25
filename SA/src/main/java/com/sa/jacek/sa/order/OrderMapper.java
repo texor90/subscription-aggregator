@@ -9,9 +9,11 @@ import java.util.List;
 public interface OrderMapper {
 
     @Mapping(source = "userId", target = "user.id")
+    @Mapping(source = "productId", target = "product.id")
     Order mapToEntity(OrderDto dto);
 
     @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "product.id", target = "productId")
 
     OrderDto mapToDto(Order order);
 

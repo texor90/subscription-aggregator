@@ -4,6 +4,8 @@ import com.sa.jacek.sa.exception.IdMismatchException;
 import com.sa.jacek.sa.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -22,10 +24,11 @@ public class OrderService {
     }
 
     public OrderDto addOrder(OrderDto dto) {
-        Order Order = orderMapper.mapToEntity(dto);
-        Assert.isNull(Order.getId(), "Id has to be null");
-        orderRepository.save(Order);
-        return orderMapper.mapToDto(Order);
+        dto.setPurchaseDate(LocalDate.now());
+        Order order = orderMapper.mapToEntity(dto);
+        Assert.isNull(order.getId(), "Id has to be null");
+        orderRepository.save(order);
+        return orderMapper.mapToDto(order);
     }
 
 
