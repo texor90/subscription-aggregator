@@ -2,7 +2,6 @@ package com.sa.jacek.sa.product;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Getter

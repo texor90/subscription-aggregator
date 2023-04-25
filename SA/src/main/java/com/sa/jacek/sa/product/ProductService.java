@@ -4,7 +4,6 @@ import com.sa.jacek.sa.exception.IdMismatchException;
 import com.sa.jacek.sa.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-
 import java.util.List;
 
 @Service

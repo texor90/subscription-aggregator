@@ -1,4 +1,4 @@
-package com.sa.jacek.sa.user;
+package com.sa.jacek.sa.order;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,17 +8,16 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "orders")
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-    private String login;
-    private String email;
-    private String password;
-    private LocalDate dateOfBirth;
+    private Long user_id;
+    private Long product_id;
+    private double price;
+    private LocalDate purchaseDate;
+
 
 }
-

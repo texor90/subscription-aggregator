@@ -1,8 +1,6 @@
 package com.sa.jacek.sa.category;
 
-
 import org.mapstruct.Mapper;
-
 import java.util.List;
 
 @Mapper(componentModel = "spring")
