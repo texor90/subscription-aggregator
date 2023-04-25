@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class OrderDto {
 
     private Long id;
-    private Long user_id;
+    private Long userId;
     private Long product_id;
     private double price;
     private LocalDate purchaseDate;

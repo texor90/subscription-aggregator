@@ -1,5 +1,6 @@
 package com.sa.jacek.sa.order;
 
+import com.sa.jacek.sa.user.User;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -14,7 +15,10 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long user_id;
+
+
+    @ManyToOne
+    private User user;
     private Long product_id;
     private double price;
     private LocalDate purchaseDate;

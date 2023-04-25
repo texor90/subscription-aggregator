@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -19,6 +20,20 @@ public class User {
     private String email;
     private String password;
     private LocalDate dateOfBirth;
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof User user) {
+            return Objects.equals(id, user.id);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
 
 }
 
