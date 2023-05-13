@@ -17,6 +17,7 @@ public class OrderDto {
     private Long userId;
     @NotNull
     private Long productId;
+    @NotNull
     private LocalDateTime purchaseDate;
 
 }
