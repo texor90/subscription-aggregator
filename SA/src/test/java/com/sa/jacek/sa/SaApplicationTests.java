@@ -39,4 +39,12 @@ class SaApplicationTests {
 		Assertions.assertNotNull( result.getPurchaseDate());
 	}
 
+	@Test
+	void testShorterPassword() {
+		Object PasswordUtils;
+		assertFalse(PasswordUtils.validatePasswordStrength("aaaa"));
+	}
+
+
+
 }
